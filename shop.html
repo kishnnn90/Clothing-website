@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Shop — NŌRE</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       ANNOUNCEMENT BAR
+  ====================================================== -->
+
+  <div class="announcement">
+
+    FREE SHIPPING ON ORDERS OVER ₹1,999
+
+    <span>•</span>
+
+    EASY 7-DAY RETURNS
+
+  </div>
+
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+      NŌRE<span>®</span>
+    </a>
+
+
+    <nav class="desktop-nav">
+
+      <a href="index.html">
+        HOME
+      </a>
+
+      <a
+        href="shop.html"
+        class="active"
+      >
+        SHOP
+      </a>
+
+      <a href="index.html#story">
+        STORY
+      </a>
+
+      <a href="index.html#lookbook">
+        LOOKBOOK
+      </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+
+      <button
+        class="icon-btn search-toggle"
+        type="button"
+        aria-label="Search"
+      >
+        ⌕
+      </button>
+
+
+      <a
+        href="cart.html"
+        class="bag-link"
+      >
+
+        BAG
+
+        <span class="bag-count">
+          0
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       SEARCH PANEL
+  ====================================================== -->
+
+  <div class="search-panel">
+
+    <form id="searchForm">
+
+      <input
+        type="search"
+        id="siteSearch"
+        placeholder="SEARCH THE COLLECTION"
+        autocomplete="off"
+      >
+
+      <button type="submit">
+        SEARCH ↗
+      </button>
+
+    </form>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       PAGE HERO
+  ====================================================== -->
+
+  <main>
+
+
+    <section class="page-hero">
+
+
+      <div>
+
+        <p class="eyebrow">
+          NŌRE / COLLECTION 01
+        </p>
+
+        <h1>
+          THE
+          <em>COLLECTION.</em>
+        </h1>
+
+      </div>
+
+
+      <p>
+
+        A study of form, expression
+        and contemporary Arabic-inspired
+        graphics.
+
+        <br><br>
+
+        Designed for those who
+        choose to stand apart.
+
+      </p>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SHOP
+    ==================================================== -->
+
+    <section class="section-pad shop-area">
+
+
+      <!-- TOOLBAR -->
+
+      <div class="shop-toolbar">
+
+
+        <div class="filters">
+
+
+          <button
+            class="filter active"
+            type="button"
+            onclick="loadShopPage()"
+          >
+            ALL
+          </button>
+
+
+          <button
+            class="filter"
+            type="button"
+            onclick="filterProducts('black')"
+          >
+            BLACK
+          </button>
+
+
+          <button
+            class="filter"
+            type="button"
+            onclick="filterProducts('white')"
+          >
+            WHITE
+          </button>
+
+
+          <button
+            class="filter"
+            type="button"
+            onclick="filterProducts('limited')"
+          >
+            LIMITED
+          </button>
+
+
+        </div>
+
+
+        <select
+          onchange="sortProducts(this.value)"
+          aria-label="Sort products"
+        >
+
+          <option value="">
+            SORT
+          </option>
+
+          <option value="new">
+            NEWEST
+          </option>
+
+          <option value="low">
+            PRICE: LOW TO HIGH
+          </option>
+
+          <option value="high">
+            PRICE: HIGH TO LOW
+          </option>
+
+        </select>
+
+
+      </div>
+
+
+
+      <!-- SEARCH RESULT TITLE -->
+
+      <p
+        id="shopSearchTitle"
+        class="eyebrow"
+      ></p>
+
+
+
+      <!-- PRODUCT GRID -->
+
+      <div
+        id="shopProducts"
+        class="product-grid product-grid-4"
+      >
+
+        <!-- PRODUCTS LOAD AUTOMATICALLY
+             FROM script.js -->
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         BRAND STATEMENT
+    ==================================================== -->
+
+    <section
+      class="section-pad story"
+      id="story"
+    >
+
+
+      <div class="story-number">
+
+        01 / 03
+
+      </div>
+
+
+      <div>
+
+        <h2>
+
+          MADE TO BE
+
+          <em>SEEN.</em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="story-text">
+
+        <p>
+
+          NŌRE is built around
+          the idea that clothing
+          should communicate
+          something.
+
+        </p>
+
+
+        <p>
+
+          Every graphic,
+          silhouette and detail
+          is created with intention.
+
+        </p>
+
+
+        <a
+          href="index.html#story"
+          class="text-link"
+        >
+
+          DISCOVER OUR STORY
+
+          <span>↗</span>
+
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         NEWSLETTER
+    ==================================================== -->
+
+    <section
+      class="section-pad newsletter"
+    >
+
+
+      <p class="eyebrow">
+        THE NŌRE LIST
+      </p>
+
+
+      <h2>
+
+        FIRST ACCESS.
+
+        <br>
+
+        <em>NO NOISE.</em>
+
+      </h2>
+
+
+      <form
+        class="newsletter-form"
+        onsubmit="return subscribe(event)"
+      >
+
+        <input
+          type="email"
+          id="email"
+          placeholder="YOUR EMAIL ADDRESS"
+          required
+        >
+
+        <button type="submit">
+          JOIN ↗
+        </button>
+
+      </form>
+
+
+      <p
+        id="subscribeMsg"
+        class="form-message"
+      ></p>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+
+
+    <div class="footer-top">
+
+
+      <div>
+
+        <div class="footer-brand">
+
+          NŌRE<span>®</span>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-title">
+          EXPLORE
+        </p>
+
+        <a href="shop.html">
+          SHOP
+        </a>
+
+        <a href="index.html#story">
+          STORY
+        </a>
+
+        <a href="index.html#lookbook">
+          LOOKBOOK
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-title">
+          HELP
+        </p>
+
+        <a href="#">
+          SHIPPING
+        </a>
+
+        <a href="#">
+          RETURNS
+        </a>
+
+        <a href="#">
+          CONTACT
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-title">
+          SOCIAL
+        </p>
+
+        <a href="#">
+          INSTAGRAM
+        </a>
+
+        <a href="#">
+          PINTEREST
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 NŌRE
+      </span>
+
+      <span>
+        ALL RIGHTS RESERVED
+      </span>
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
