@@ -1,112 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart | Nore</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Your Bag — NŌRE</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
+
 <body>
-    <!-- HEADER -->
-    <header class="navbar">
-        <div class="logo">
-            NORE
+
+
+  <!-- =====================================================
+       ANNOUNCEMENT
+  ====================================================== -->
+
+  <div class="announcement">
+
+    FREE SHIPPING ON ORDERS OVER ₹1,999
+
+    <span>•</span>
+
+    EASY 7-DAY RETURNS
+
+  </div>
+
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+      NŌRE<span>®</span>
+    </a>
+
+
+    <nav class="desktop-nav">
+
+      <a href="index.html">
+        HOME
+      </a>
+
+      <a href="shop.html">
+        SHOP
+      </a>
+
+      <a href="index.html#story">
+        STORY
+      </a>
+
+      <a href="index.html#lookbook">
+        LOOKBOOK
+      </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+
+      <button
+        class="icon-btn search-toggle"
+        type="button"
+        aria-label="Search"
+      >
+        ⌕
+      </button>
+
+
+      <a
+        href="cart.html"
+        class="bag-link active"
+      >
+
+        BAG
+
+        <span class="bag-count">
+          0
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       SEARCH PANEL
+  ====================================================== -->
+
+  <div class="search-panel">
+
+    <form id="searchForm">
+
+      <input
+        type="search"
+        id="siteSearch"
+        placeholder="SEARCH THE COLLECTION"
+        autocomplete="off"
+      >
+
+      <button type="submit">
+        SEARCH ↗
+      </button>
+
+    </form>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       CART
+  ====================================================== -->
+
+  <main>
+
+
+    <section class="section-pad">
+
+
+      <!-- CART HEADING -->
+
+      <div class="cart-heading">
+
+
+        <div>
+
+          <p class="eyebrow">
+            NŌRE / YOUR SELECTION
+          </p>
+
+          <h1>
+            YOUR BAG.
+          </h1>
+
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html#shop">Shop</a>
-            <a href="index.html#about">About</a>
-        </nav>
-        <div class="nav-actions">
-            <a href="cart.html" class="cart-link">
-                🛒 Cart
-                <span id="cart-count">0</span>
-            </a>
+
+
+        <a
+          href="shop.html"
+          class="text-link"
+        >
+          CONTINUE SHOPPING
+          <span>↗</span>
+        </a>
+
+
+      </div>
+
+
+
+      <!-- CART LAYOUT -->
+
+      <div class="cart-layout">
+
+
+        <!-- ===============================================
+             CART ITEMS
+        ================================================ -->
+
+        <div
+          id="cartItems"
+          class="cart-items"
+        >
+
+          <!--
+            Cart products are automatically
+            loaded here by script.js
+          -->
+
         </div>
-    </header>
-    <!-- CART SECTION -->
-    <main class="cart-page">
-        <div class="cart-header">
-            <h1>Your Cart</h1>
-            <p id="cart-message">
-                Review your selected items before checkout.
-            </p>
+
+
+
+        <!-- ===============================================
+             ORDER SUMMARY
+        ================================================ -->
+
+        <aside class="summary">
+
+
+          <p class="eyebrow">
+            ORDER SUMMARY
+          </p>
+
+
+          <h2>
+            TOTAL
+          </h2>
+
+
+          <!-- SUBTOTAL -->
+
+          <div class="summary-row">
+
+            <span>
+              SUBTOTAL
+            </span>
+
+            <strong id="cartSubtotal">
+              ₹0
+            </strong>
+
+          </div>
+
+
+
+          <!-- SHIPPING -->
+
+          <div class="summary-row">
+
+            <span>
+              SHIPPING
+            </span>
+
+            <strong id="cartShipping">
+              ₹0
+            </strong>
+
+          </div>
+
+
+
+          <!-- TOTAL -->
+
+          <div class="summary-total">
+
+            <span>
+              TOTAL
+            </span>
+
+            <strong id="cartTotal">
+              ₹0
+            </strong>
+
+          </div>
+
+
+
+          <!-- CHECKOUT -->
+
+          <button
+            class="button button-dark"
+            type="button"
+            onclick="openCheckout()"
+          >
+
+            PROCEED TO CHECKOUT
+
+            <span>
+              ↗
+            </span>
+
+          </button>
+
+
+          <p class="summary-note">
+
+            FREE SHIPPING ON ORDERS OVER ₹1,999
+
+          </p>
+
+
+        </aside>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       CHECKOUT MODAL
+  ====================================================== -->
+
+  <div
+    class="modal"
+    id="checkoutModal"
+    style="display:none;"
+  >
+
+
+    <div class="modal-box">
+
+
+      <!-- CLOSE -->
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeCheckout()"
+        aria-label="Close checkout"
+      >
+        ×
+      </button>
+
+
+
+      <!-- ===============================================
+           CHECKOUT FORM
+      ================================================ -->
+
+      <div id="checkoutFormWrapper">
+
+
+        <p class="eyebrow">
+          NŌRE / CHECKOUT
+        </p>
+
+
+        <h2>
+          COMPLETE YOUR ORDER.
+        </h2>
+
+
+        <form
+          id="checkoutForm"
+          onsubmit="return submitOrder(event)"
+        >
+
+
+          <!-- NAME -->
+
+          <div class="form-group">
+
+            <label for="customerName">
+              FULL NAME
+            </label>
+
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              placeholder="YOUR FULL NAME"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- PHONE -->
+
+          <div class="form-group">
+
+            <label for="customerPhone">
+              PHONE NUMBER
+            </label>
+
+            <input
+              type="tel"
+              id="customerPhone"
+              name="customerPhone"
+              placeholder="YOUR PHONE NUMBER"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- EMAIL -->
+
+          <div class="form-group">
+
+            <label for="customerEmail">
+              EMAIL
+            </label>
+
+            <input
+              type="email"
+              id="customerEmail"
+              name="customerEmail"
+              placeholder="YOUR EMAIL ADDRESS"
+              required
+            >
+
+          </div>
+
+
+
+          <!-- ADDRESS -->
+
+          <div class="form-group">
+
+            <label for="customerAddress">
+              DELIVERY ADDRESS
+            </label>
+
+            <textarea
+              id="customerAddress"
+              name="customerAddress"
+              rows="4"
+              placeholder="HOUSE NO., STREET, AREA, CITY, STATE, PIN CODE"
+              required
+            ></textarea>
+
+          </div>
+
+
+
+          <!-- PAYMENT -->
+
+          <div class="form-group">
+
+            <label for="paymentMethod">
+              PAYMENT METHOD
+            </label>
+
+            <select
+              id="paymentMethod"
+              name="paymentMethod"
+              required
+            >
+
+              <option value="">
+                SELECT PAYMENT METHOD
+              </option>
+
+              <option value="cod">
+                CASH ON DELIVERY
+              </option>
+
+              <option value="online">
+                ONLINE PAYMENT
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <!-- PLACE ORDER -->
+
+          <button
+            type="submit"
+            class="button button-dark"
+          >
+
+            PLACE ORDER
+
+            <span>
+              ↗
+            </span>
+
+          </button>
+
+
+        </form>
+
+
+      </div>
+
+
+
+      <!-- ===============================================
+           ORDER SUCCESS
+      ================================================ -->
+
+      <div
+        class="success"
+        id="checkoutSuccess"
+        style="display:none;"
+      >
+
+
+        <p class="eyebrow">
+          NŌRE / ORDER CONFIRMED
+        </p>
+
+
+        <h2>
+          THANK YOU.
+        </h2>
+
+
+        <p>
+          Your order has been placed successfully.
+        </p>
+
+
+        <p>
+          ORDER NUMBER:
+          <strong id="orderNumber"></strong>
+        </p>
+
+
+        <a
+          href="index.html"
+          class="button button-dark"
+        >
+          BACK TO HOME
+          <span>↗</span>
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+
+
+    <div class="footer-top">
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <div class="footer-brand">
+
+          NŌRE<span>®</span>
+
         </div>
-        <div class="cart-container">
-            <!-- CART ITEMS -->
-            <section class="cart-items">
-                <div id="cart-items-list">
-                    <!-- Products will be added here using JavaScript -->
-                </div>
-                <div id="empty-cart" class="empty-cart" style="display:none;">
-                    <h2>Your cart is empty</h2>
-                    <p>
-                        Looks like you haven't added anything yet.
-                    </p>
-                    <a href="index.html" class="continue-shopping">
-                        Continue Shopping
-                    </a>
-                </div>
-            </section>
-            <!-- ORDER SUMMARY -->
-            <aside class="cart-summary">
-                <h2>Order Summary</h2>
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span id="cart-subtotal">₹0</span>
-                </div>
-                <div class="summary-row">
-                    <span>Shipping</span>
-                    <span id="cart-shipping">₹0</span>
-                </div>
-                <div class="summary-row">
-                    <span>Discount</span>
-                    <span id="cart-discount">₹0</span>
-                </div>
-                <hr>
-                <div class="summary-total">
-                    <span>Total</span>
-                    <strong id="cart-total">₹0</strong>
-                </div>
-                <button
-                    type="button"
-                    id="checkout-btn"
-                    class="checkout-btn">
-                    Proceed to Checkout
-                </button>
-                <a href="index.html" class="continue-shopping">
-                    Continue Shopping
-                </a>
-            </aside>
-        </div>
-    </main>
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h3>NORE</h3>
-                <p>
-                    Designed for those who define their own style.
-                </p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="index.html#shop">Shop</a>
-                <a href="index.html#about">About</a>
-            </div>
-            <div>
-                <h4>Customer Care</h4>
-                <p>Contact Us</p>
-                <p>Shipping & Returns</p>
-                <p>Privacy Policy</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2026 NORE. All Rights Reserved.
-        </div>
-    </footer>
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+
+      </div>
+
+
+
+      <!-- EXPLORE -->
+
+      <div>
+
+        <p class="footer-title">
+          EXPLORE
+        </p>
+
+
+        <a href="shop.html">
+          SHOP
+        </a>
+
+
+        <a href="index.html#story">
+          STORY
+        </a>
+
+
+        <a href="index.html#lookbook">
+          LOOKBOOK
+        </a>
+
+      </div>
+
+
+
+      <!-- HELP -->
+
+      <div>
+
+        <p class="footer-title">
+          HELP
+        </p>
+
+
+        <a href="#">
+          SHIPPING
+        </a>
+
+
+        <a href="#">
+          RETURNS
+        </a>
+
+
+        <a href="#">
+          CONTACT
+        </a>
+
+      </div>
+
+
+
+      <!-- SOCIAL -->
+
+      <div>
+
+        <p class="footer-title">
+          SOCIAL
+        </p>
+
+
+        <a href="#">
+          INSTAGRAM
+        </a>
+
+
+        <a href="#">
+          PINTEREST
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 NŌRE
+      </span>
+
+
+      <span>
+        ALL RIGHTS RESERVED
+      </span>
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="script.js"></script>
+
+
 </body>
+
 </html>
